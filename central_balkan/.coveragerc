@@ -1,0 +1,5 @@
+[run]
+include = central_balkan/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
