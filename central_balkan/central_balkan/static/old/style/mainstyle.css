@@ -1,0 +1,221 @@
+body{
+    background-attachment: fixed;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: lightgoldenrodyellow;
+}
+body *{
+    max-width: 1000px;
+    margin: auto;
+    font-family: "Tahoma", "Arial";
+}
+header{
+    
+    max-height: 1000px;
+    min-height: 200px;
+    background-image: url("/static/old/images/header-image.jpg");
+    opacity: 1;
+    margin-top: 50px;
+    border-radius: 3px;
+}
+#headerLink{
+    min-height: 200px;
+    max-height: 1000px;
+    display: block;
+}
+#headerLink:hover{
+    text-decoration: none;
+}
+h1{
+    display: block;
+    margin: auto;
+    position: relative;
+    max-width: 800px;
+    color: darkslategrey;
+    text-align: left;
+    padding-top: 50px;
+    font-size: 35px;
+    text-decoration-style:solid;
+ 
+}
+h1 > small{
+    color: bisque;
+}
+#headerLogoImage{
+    max-width: 50%;
+    float: right;
+    margin-top: 20px;
+    
+}
+#top-link-block{
+    border-radius: 50%;
+}
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px;
+    right: 10px;
+    float: right;
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 60px;
+    right: 30px;
+    float: right;
+    
+}
+.well-sm{
+    border-radius: 50%;
+}
+footer{
+    height: auto;
+    border-radius: 3px;
+    margin-top: 5px;
+    background-color: #111;
+}
+.footer{
+    margin-top: 10px;
+}
+.col-lg-4 .footer_dv p{
+    color: #fff;
+    margin-left: 20px;
+}
+nav{
+    display: block;
+    margin: auto;
+    margin-top:-60px;
+    width: 100%;
+}
+.navbar-header{
+    display: inline-block;
+}
+#footerLogoImage{
+    height: 150px;
+    width: auto;
+    padding: 20px;
+    margin: auto;
+    display: block;
+    opacity: 0.9;
+}
+
+.footer_dv > .pull-left{
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+}
+.col-lg-4 > .footer_dv *{
+    margin: auto;
+    display: inline-block;
+}
+.col-lg-4 > .footer_dv *:hover{
+    text-decoration: none;
+}
+#main{
+    display: block;
+    border: 1px solid #bbb;
+    min-height: 600px;
+    position: relative;
+    border-radius: 3px;
+    background-color: #ddd;
+    margin-top: -20px;
+    margin-bottom: -10px;
+}
+#indexSlider, #gallerySlider{
+    max-width: 650px;
+}
+#indexProducts{
+    max-width: 700px;
+    display: block;
+    margin: auto;
+}
+#indexProducts div .col-sm-3{
+    margin: 30px;
+    padding: 0px;
+    background-color: #111;
+    display: inline-block;
+}
+.product{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.productDescription{
+    display: block;
+    margin: auto;
+    width: auto;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    color: #ddd;
+}
+.seeMore{
+    width:100%;
+    height:100%;
+    background-color: white;
+    color: black;
+    position: absolute;
+    display: block;
+    
+    padding: 60px 0px 0px 30px;
+    font-size: 30px;
+    opacity: 0.5;
+    padding-bottom: 50px;
+}
+.invisible{
+   visibility: hidden; 
+}
+.footer_dv{
+    margin-top: 20px;
+}
+.lighten{
+    opacity: 0.6;
+}
+.container .navbar-header navbar-brand{
+    display: inline;
+}
+#indexHeading{
+    display: block;
+    text-align: center;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.row{
+    margin-left: 8px;
+    margin-right:8px;
+    max-width: 800px;
+    height: auto;
+}
+#indexProducts div .col-sm-3 {
+    margin: 25px;
+}
+#indexProducts .panel-info{
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+h6{
+    display: block;
+    margin: auto;
+    color: #ddd;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+h2, h3{
+    display: block;
+    margin: auto;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+    font-size: 14px;
+    font-weight: bold;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    max-height: 345px;
+    width: auto;
+}
+.carousel-inner{
+    margin-bottom: 50px;
+}
