@@ -32,6 +32,12 @@ class Product(models.Model):
         max_length=255,
     )
 
+    image = models.ImageField(
+        'Изображение',
+        blank=True,
+        null=True
+    )
+
     description = models.TextField(
         verbose_name='Описание',
         blank=True,
