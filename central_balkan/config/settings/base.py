@@ -65,6 +65,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'crispy_forms',
     'rest_framework',
+    'corsheaders',
 ]
 LOCAL_APPS = [
     'central_balkan.users.apps.UsersAppConfig',
@@ -217,3 +218,5 @@ ADMINS = [
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
+
+CORS_ORIGIN_ALLOW_ALL = True

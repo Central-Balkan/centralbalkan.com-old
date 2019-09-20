@@ -18,6 +18,10 @@ urlpatterns = [
         TemplateView.as_view(template_name="pages/about.html"),
         name="about",
     ),
+    path(
+        'api/products/',
+        include("central_balkan.products.urls", namespace="products"),
+    ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
