@@ -1,4 +1,7 @@
 from django.db import models
+from django.conf import settings
+
+from central_balkan.common.utils import get_domain
 
 
 class Category(models.Model):
@@ -50,6 +53,13 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Категория',
     )
+
+    @property
+    def image_url(self):
+        domain = get_domain()
+        media_url = settings.MEDIA_URL
+
+        return f'{domain}{media_url}{self.image}'
 
     def __str__(self):
         return 'Продукт "{name}"'.format(

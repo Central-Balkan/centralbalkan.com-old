@@ -28,11 +28,13 @@ class CategoriesAndProductsAPIView(APIView):
             products_count=Count('products')
         )
         products_data = {
-            category.id: category.products.values(
-                'name',
-                'description',
-                'image'
-            )
+            category.id: [
+                {
+                    'name': product.name,
+                    'description': product.description,
+                    'image': product.image_url
+                } for product in category.products.all()
+            ]
             for category in categories
         }
 

@@ -12,6 +12,7 @@ urlpatterns = [
     path('gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
     path('about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
     path('contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
+    path('new/', TemplateView.as_view(template_name='index.html')),
     path("users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
         "about/",
