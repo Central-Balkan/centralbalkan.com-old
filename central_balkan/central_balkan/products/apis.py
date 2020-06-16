@@ -4,7 +4,7 @@ from rest_framework import serializers
 from django.db.models import Count
 
 from central_balkan.common.utils import inline_serializer
-from central_balkan.products.models import Category
+from central_balkan.products.models import Category, Product
 
 
 class CategoriesAndProductsAPIView(APIView):
@@ -30,6 +30,7 @@ class CategoriesAndProductsAPIView(APIView):
         products_data = {
             category.id: [
                 {
+                    'id': product.id,
                     'name': product.name,
                     'description': product.description,
                     'image': product.image_url
@@ -51,3 +52,21 @@ class CategoriesAndProductsAPIView(APIView):
         )
 
         return response
+
+
+class ProductsDetailAPIView(APIView):
+    class OutputSerializer(serializers.Serializer):
+        id = serializers.IntegerField()
+        name = serializers.CharField()
+        image_url = serializers.CharField()
+        description = serializers.CharField()
+
+    def get(self, request, product_id):
+        product = Product.objects.get(id=product_id)
+
+        return Response(
+            data=self.OutputSerializer(product).data,
+            headers={
+                'Access-Control-Allow-Origin': '*'
+            }
+        )
