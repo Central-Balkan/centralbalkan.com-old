@@ -6,16 +6,16 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='old_site/index.html')),
-    path('index.html/', TemplateView.as_view(template_name='old_site/index.html')),
-    path('products.html/', TemplateView.as_view(template_name='old_site/products.html')),
-    path('gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
-    path('about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
-    path('contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
-    path('new/', TemplateView.as_view(template_name='index.html')),
-    path("users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path('api/', TemplateView.as_view(template_name='old_site/index.html')),
+    path('api/index.html/', TemplateView.as_view(template_name='old_site/index.html')),
+    path('api/products.html/', TemplateView.as_view(template_name='old_site/products.html')),
+    path('api/gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
+    path('api/about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
+    path('api/contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
+    path('api/new/', TemplateView.as_view(template_name='index.html')),
+    path("api/users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
-        "about/",
+        "api/about/",
         TemplateView.as_view(template_name="pages/about.html"),
         name="about",
     ),
@@ -27,14 +27,14 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path(
-        "users/",
+        "api/users/",
         include("central_balkan.users.urls", namespace="users"),
     ),
     # Your stuff: custom urls includes go here
 ] + static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+    f'api/{settings.MEDIA_URL}', document_root=settings.MEDIA_ROOT
 ) + static(
-    settings.STATIC_URL, document_root=settings.STATIC_ROOT
+    f'api/{settings.STATIC_URL}', document_root=settings.STATIC_ROOT
 )
 
 if settings.DEBUG:
