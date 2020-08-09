@@ -10,8 +10,13 @@ class MainPageView(TemplateView):
         context = super().get_context_data(*args, **kwargs)
 
         context['images'] = [
-            image.image_url for image in
-            SlideShowImage.objects.all()
+            {
+                'idx': idx,
+                'url': image.image_url,
+                'active_class': 'active' if idx == 0 else ''
+
+            }
+            for idx, image in enumerate(SlideShowImage.objects.all())
         ]
 
         return context
