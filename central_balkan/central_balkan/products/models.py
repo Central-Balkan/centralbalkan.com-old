@@ -59,7 +59,11 @@ class Product(models.Model):
         domain = get_domain()
         media_url = settings.MEDIA_URL
 
-        return f'{domain}{media_url}{self.image}'
+        return '{domain}{media_url}{image}'.format(
+            domain=domain,
+            media_url=media_url,
+            image=self.image
+        )
 
     def __str__(self):
         return 'Продукт "{name}"'.format(

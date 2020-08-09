@@ -12,29 +12,32 @@ urlpatterns = [
     path('gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
     path('about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
     path('contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
-    path('new/', TemplateView.as_view(template_name='index.html')),
     path("users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
-        "api/about/",
+        "about/",
         TemplateView.as_view(template_name="pages/about.html"),
         name="about",
     ),
     path(
-        'api/products/',
+        'products/',
         include("central_balkan.products.urls", namespace="products"),
     ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path(
-        "api/users/",
+        "users/",
         include("central_balkan.users.urls", namespace="users"),
+    ),
+    path(
+        "new/",
+        include("central_balkan.dashboard.urls", namespace="dashboard"),
     ),
     # Your stuff: custom urls includes go here
 ] + static(
-    f'api/{settings.MEDIA_URL}', document_root=settings.MEDIA_ROOT
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 ) + static(
-    f'api/{settings.STATIC_URL}', document_root=settings.STATIC_ROOT
+    settings.STATIC_URL, document_root=settings.STATIC_ROOT
 )
 
 if settings.DEBUG:

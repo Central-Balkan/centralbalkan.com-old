@@ -2,7 +2,6 @@ from django.apps import AppConfig
 
 
 class UsersAppConfig(AppConfig):
-
     name = "central_balkan.users"
     verbose_name = "Потребители"
 
