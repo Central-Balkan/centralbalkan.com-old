@@ -2,6 +2,9 @@
 
 {% block content %}
 <div id="main_page_slider" class="carousel slide" data-ride="carousel">
+  <div class="overlay">
+      <h2>Централен Балкан, гр. Габрово</h2>
+  </div>
   <ol class="carousel-indicators">
     {% for image in images %}
         <li data-target="#carouselExampleIndicators" data-slide-to="{image.idx}" class="{{image.active_class}}"></li>

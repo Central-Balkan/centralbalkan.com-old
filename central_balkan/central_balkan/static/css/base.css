@@ -25,32 +25,33 @@ nav {
     height: auto;
     margin: 0;
     padding: 0;
+    background-color: #0c3243;
+}
+nav * {
+    color: white;
 }
 
-.navigation-group {
-    display: flex;
+nav .navbar-toggler span {
+    color: white;
+}
+
+.navigation-list {
     width: 100%;
 }
 
-.navigation-subgroup {
-    flex: auto;
-    letter-spacing: 3px;
-    margin: 0;
-    background: #0c3243;
+#main_page_slider > .overlay {
+    background: white;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 2;
 }
 
-.navigation-item {
+#main_page_slider > .overlay > h2 {
+    margin-top: 20px;
     text-align: center;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: white;
-    border: 0.5px solid white;
-    display: block;
-    word-wrap: break-word;
-    line-height: 20px;
-    text-decoration: none;
-    margin: auto;
-    padding: 5px;
+    font-size: 40px;
 }
 
 #main_page_slider {

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 
         <link rel="stylesheet" href="/static/css/base.css">
     </head>
@@ -13,40 +14,59 @@
         <header>
             <img src="/media/header.jpg" />
         </header>
-        <nav>
-            <div class='navigation-group'>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">Начало</a>
-                    <a class='navigation-item' href="/new">Партньори</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">Парапети</a>
-                    <a class='navigation-item' href="/new">Огради</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">Врати</a>
-                    <a class='navigation-item' href="/new">Стълби</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">Метални конструкции</a>
-                    <a class='navigation-item' href="/new">Навеси</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">Градинкси мебели</a>
-                    <a class='navigation-item' href="/new">Детаил от метал</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">-</a>
-                    <a class='navigation-item' href="/new">Стълби</a>
-                </div>
-                <div class='navigation-subgroup'>
-                    <a class='navigation-item' href="/new">BG / EN</a>
-                    <a class='navigation-item' href="/new">Детайли</a>
-                </div>
-            </div>
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">Central Balkan</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars fa-lg py-1 text-white"></i>
+
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navigation-list navbar-nav nav nav-fill nav-pills">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Начало</a>
+                <a class="nav-link" href="/new">Партньори</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">Парапети</a>
+                  <a class="nav-link" href="/new">Огради</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">Врати</a>
+                  <a class="nav-link" href="/new">Стълби</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">Метални конструкции</a>
+                  <a class="nav-link" href="/new">Навеси</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">Градинкси мебели</a>
+                  <a class="nav-link" href="/new">Детайли от метал</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">-</a>
+                  <a class="nav-link" href="/new">Стълби</a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/new">BG / EN</a>
+                  <a class="nav-link" href="/new">Детайли</a>
+              </li>
+
+            </ul>
+          </div>
         </nav>
 
+
         {% block content %}
+            No content
         {% endblock %}
 
 
