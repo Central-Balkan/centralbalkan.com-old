@@ -9,6 +9,12 @@ class Category(models.Model):
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
 
+    slug = models.CharField(
+        verbose_name='Име за URL',
+        max_length=255,
+        unique=True
+    )
+
     name = models.CharField(
         verbose_name='Име',
         max_length=255,

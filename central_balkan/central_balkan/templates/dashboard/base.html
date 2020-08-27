@@ -26,38 +26,38 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navigation-list navbar-nav nav nav-fill nav-pills">
               <li class="nav-item">
-                <a class="nav-link" href="#">Начало</a>
-                <a class="nav-link" href="/new">Партньори</a>
+              <a class="nav-link" href="{% url 'dashboard:main-page' %}">Начало</a>
+              <a class="nav-link" href="{% url 'dashboard:category_detail' 'partners' %}">Партньори</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">Парапети</a>
-                  <a class="nav-link" href="/new">Огради</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'parapets' %}">Парапети</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'fences' %}">Огради</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">Врати</a>
-                  <a class="nav-link" href="/new">Стълби</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'doors' %}">Врати</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'stairs' %}">Стълби</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">Метални конструкции</a>
-                  <a class="nav-link" href="/new">Навеси</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'metal-constructions' %}">Метални конструкции</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'sheds' %}">Навеси</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">Градинкси мебели</a>
-                  <a class="nav-link" href="/new">Детайли от метал</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'garden-furniture' %}">Градинкси мебели</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'metal-details' %}">Детайли от метал</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">-</a>
-                  <a class="nav-link" href="/new">Стълби</a>
+                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">-</a>
+                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'stairs' %}">Стълби</a>
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="/new">BG / EN</a>
-                  <a class="nav-link" href="/new">Детайли</a>
+                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">BG / EN</a>
+                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">Детайли</a>
               </li>
 
             </ul>
@@ -69,8 +69,54 @@
             No content
         {% endblock %}
 
+        <footer class="page-footer font-small blue pt-4">
+          <div class="container-fluid text-center text-md-left">
+            <div class="row">
+              <div class="col-md-6 mt-md-0 mt-3">
+                <h5 class="text-uppercase">Централен Балкан</h5>
+                <p>гр. Габрово, България</p>
+              </div>
+              <hr class="clearfix w-100 d-md-none pb-3">
+              <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Links</h5>
 
-        <footer></footer>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+
+              </div>
+              <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
