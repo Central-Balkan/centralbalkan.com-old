@@ -61,3 +61,27 @@ nav .navbar-toggler span {
     width: 100vw;
 }
 
+
+#productDetailModal * {
+    color: #656565;
+}
+
+#productDetailModal button {
+    color: white;
+}
+
+#productDetailModal .modal-img {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+#productDetailModal .modal-description {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#productDetailModal form {
+    margin-top: 10px;
+}

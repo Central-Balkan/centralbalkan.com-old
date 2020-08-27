@@ -120,9 +120,23 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
       <script>
         $('.carousel').carousel({
           interval: 3000
+        })
+
+        $('#productDetailModal').on('show.bs.modal', function (event) {
+          const button = $(event.relatedTarget)
+          const title = button.data('title')
+          const image = button.data('image')
+          const description = button.data('description')
+
+          var modal = $(this)
+
+          modal.find('.modal-title').text(`Запитване за "${title}"`)
+          modal.find('.modal-img').attr('src', image)
+          modal.find('.modal-description').text(`Запитване за "${title}"`)
         })
       </script>
 
