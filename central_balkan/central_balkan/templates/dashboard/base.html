@@ -57,7 +57,7 @@
 
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'dashboard:main-page' %}">BG / EN</a>
-                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">Детайли</a>
+                  <a class="nav-link" href="{% url 'dashboard:about_us' %}">Контакти</a>
               </li>
 
             </ul>
@@ -65,9 +65,19 @@
         </nav>
 
 
+        <div class='content'>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
         {% block content %}
             No content
         {% endblock %}
+
+        </div>
 
         <footer class="page-footer font-small blue pt-4">
           <div class="container-fluid text-center text-md-left">
@@ -78,39 +88,24 @@
               </div>
               <hr class="clearfix w-100 d-md-none pb-3">
               <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Links</h5>
-
+                <h5 class="text-uppercase">Категории</h5>
                 <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
-                  </li>
+                  <li><a href="{% url 'dashboard:category_detail' 'stairs' %}">Стълби</a></li>
+                  <li><a href="{% url 'dashboard:category_detail' 'metal-constructions' %}">Метални конструкции</a></li>
+                  <li><a href="{% url 'dashboard:category_detail' 'garden-furniture' %}">Градинкси мебели</a></li>
+                  <li><a href="{% url 'dashboard:category_detail' 'metal-details' %}">Детайли от метал</a></li>
+                    <li><a href="{% url 'dashboard:category_detail' 'parapets' %}">Парапети</a></li>
+                    <li><a href="{% url 'dashboard:category_detail' 'fences' %}">Огради</a></li>
+                    <li><a href="{% url 'dashboard:category_detail' 'doors' %}">Врати</a></li>
                 </ul>
 
               </div>
               <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Links</h5>
+                <h5 class="text-uppercase">Страници</h5>
                 <ul class="list-unstyled">
-                  <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
-                  </li>
+                    <li><a href="{% url 'dashboard:main-page' %}">Начало</a></li>
+                    <li><a href="{% url 'dashboard:category_detail' 'partners' %}">Партньори</a></li>
+                    <li><a href="{% url 'dashboard:about_us' %}">Контакти</a></li>
                 </ul>
               </div>
             </div>

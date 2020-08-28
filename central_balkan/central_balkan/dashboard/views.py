@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, FormView
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 
 from central_balkan.dashboard.models import SlideShowImage, Question
 from central_balkan.dashboard.forms import AskQuestionForm
@@ -49,12 +50,26 @@ class AskQuestionView(FormView):
         return self.request.META['HTTP_REFERER']
 
     def form_valid(self, form):
-        product = Product.objects.get(id=form.cleaned_data['product'])
-
-        Question.objects.create(
+        question = Question.objects.create(
             email=form.cleaned_data['email'],
             message=form.cleaned_data['message'],
-            product=product,
+        )
+
+        product_id = form.cleaned_data.get('product')
+
+        if product_id:
+            product = Product.objects.get(id=product_id)
+            question.product = product
+            question.save()
+
+        messages.add_message(
+            self.request,
+            messages.SUCCESS,
+            'Вие успешно изпратихте запитване. Очаквайте обратна връзка.'
         )
 
         return super().form_valid(form)
+
+
+class AboutUsView(TemplateView):
+    template_name = 'dashboard/about_us.html'

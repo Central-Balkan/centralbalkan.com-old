@@ -1,0 +1,18 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<div class='about-us-page'>
+    <form method="POST" action="{% url "dashboard:ask_question" %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email адрес или телефонен номер</label>
+        <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Оставете email адрес или телефонен номер за обратна връзка">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Съобщение</label>
+        <textarea class="form-control" name="message" id="exampleInputPassword1" placeholder="Напишете вашето съобщение"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Изпратете запитване</button>
+    </form>
+</div>
+{% endblock %}
