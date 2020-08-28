@@ -109,3 +109,7 @@ nav .navbar-toggler span {
     font-weight: bold;
     text-align: center;
 }
+
+.footer-text {
+    padding-left: 30px;
+}
