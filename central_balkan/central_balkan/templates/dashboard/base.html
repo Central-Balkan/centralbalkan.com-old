@@ -128,6 +128,7 @@
 
         $('#productDetailModal').on('show.bs.modal', function (event) {
           const button = $(event.relatedTarget)
+          const id = button.data('id')
           const title = button.data('title')
           const image = button.data('image')
           const description = button.data('description')
@@ -137,6 +138,7 @@
           modal.find('.modal-title').text(`Запитване за "${title}"`)
           modal.find('.modal-img').attr('src', image)
           modal.find('.modal-description').text(`Запитване за "${title}"`)
+          modal.find('#form-product').attr('value', id)
         })
       </script>
 
