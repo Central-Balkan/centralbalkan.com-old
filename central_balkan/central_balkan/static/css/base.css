@@ -94,8 +94,7 @@ nav .navbar-toggler span {
 
 .about-us-page form {
     max-width: 80vw;
-    margin: auto;
-    margin-top: 30px;
+    margin: 30px auto;
     display: block;
 }
 
@@ -113,4 +112,11 @@ nav .navbar-toggler span {
 
 .footer-text {
     padding-left: 30px;
+}
+.page-footer a {
+    color: #e0e0e0;
+}
+
+.about-us-nav {
+    font-weight: 600;
 }

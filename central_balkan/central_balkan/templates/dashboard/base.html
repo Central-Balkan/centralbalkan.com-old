@@ -15,11 +15,10 @@
             <img src="/media/header.jpg" />
         </header>
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">Central Balkan</a>
+          <a class="navbar-brand" href="{% url 'dashboard:main-page' %}">Central Balkan</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
-                        <i class="fa fa-bars fa-lg py-1 text-white"></i>
-
+                <i class="fa fa-bars fa-lg py-1 text-white"></i>
             </span>
           </button>
 
@@ -51,15 +50,8 @@
               </li>
 
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">-</a>
-                  <a class="nav-link" href="{% url 'dashboard:category_detail' 'stairs' %}">Стълби</a>
+                  <a class="about-us-nav nav-link" href="{% url 'dashboard:about_us' %}">Контакти</a>
               </li>
-
-              <li class="nav-item">
-                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">BG / EN</a>
-                  <a class="nav-link" href="{% url 'dashboard:about_us' %}">Контакти</a>
-              </li>
-
             </ul>
           </div>
         </nav>
