@@ -22,11 +22,7 @@ class SlideShowImage(models.Model):
         domain = get_domain()
         media_url = settings.MEDIA_URL
 
-        return '{domain}{media_url}{image}'.format(
-            domain=domain,
-            media_url=media_url,
-            image=self.image
-        )
+        return f'{domain}{media_url}{self.image.field.upload_to}{self.image}'
 
     def __str__(self):
         return 'Снимка за начална страница ({image})'.format(
