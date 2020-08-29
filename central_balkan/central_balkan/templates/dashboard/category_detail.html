@@ -26,8 +26,8 @@
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Изпрати запитване</button>
+            <button type="button" class="btn central-balkan-light-button" data-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn central-balkan-dark-button">Изпрати запитване</button>
           </div>
       </form>
     </div>
@@ -35,25 +35,39 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row">
-    {% for product in category.products.all %}
-    <div
-        class="col-6 col-md-4 col-lg-3 mb-4"
-        data-toggle="modal"
-        data-target="#productDetailModal"
-        data-id="{{product.id}}"
-        data-title="{{product.name}}"
-        data-image="{{product.image_url}}"
-        data-description="{{product.description}}"
-    >
-      <div class="card mx-auto text-center">
-          <a href="#url"><img class="card-img-top" src="{{product.image_url}}" alt="Sample Title"></a>
-        <div class="card-body">
-          <h2 class="card-title"><span class="fa fa-external-link mr-1"></span><a href="#url">{{product.name}}</a></h2>
-        </div>
+    <div class="alert alert-info" role="alert">
+        За въпроси и информация кликнете върху някой от артикулите или
+        <a href="{% url 'dashboard:about_us' %}" class="alert-link">тук</a>
+    </div>
+
+      {% for row in products_rows %}
+          <div class="row">
+        {% for product in row %}
+            <div class="col-md-4 product-card"
+                 data-toggle="modal"
+                 data-target="#productDetailModal"
+                 data-id="{{product.id}}"
+                 data-title="{{product.name}}"
+                 data-image="{{product.image_url}}"
+                 data-description="{{product.description}}"
+                >
+                <div
+                 data-toggle="tooltip" title="Кликнете на артикула за въпроси и повече информация"
+                 >
+              <div class="card">
+                <h4 class="card-title">{{product.name}}</h4>
+                 <div class="card-image-holder">
+                    <img class="card-img-top" src="{{product.image_url}}" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <p class="card-text">{% if product.description %} {{product.description}} {% endif %}</p>
+                    <div class="btn central-balkan-dark-button">Кликни за повече информация</div>
+                </div>
+              </div>
+          </div>
+            </div>
+          {% endfor %}
       </div>
-    </div>
-    {% endfor %}
-    </div>
+      {% endfor%}
 </div>
 {% endblock %}

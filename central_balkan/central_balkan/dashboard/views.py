@@ -30,6 +30,14 @@ class MainPageView(TemplateView):
 class CategoryDetailView(TemplateView):
     template_name = 'dashboard/category_detail.html'
 
+    def get_products_rows(self, products, row_length):
+        """
+        Splits products into chunks
+        """
+
+        for i in range(0, len(products), row_length):
+            yield products[i:i + row_length]
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
@@ -39,6 +47,13 @@ class CategoryDetailView(TemplateView):
         )
 
         context['category'] = category
+
+        products_rows = self.get_products_rows(
+            products=category.products.all(),
+            row_length=3
+        )
+
+        context['products_rows'] = products_rows
 
         return context
 
@@ -65,7 +80,7 @@ class AskQuestionView(FormView):
         messages.add_message(
             self.request,
             messages.SUCCESS,
-            'Вие успешно изпратихте запитване. Очаквайте обратна връзка.'
+            'Вие успешно изпратихте запитване. Очаквайте обратна връзка на "{}".'.format(question.email)
         )
 
         return super().form_valid(form)
