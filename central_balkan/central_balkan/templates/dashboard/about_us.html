@@ -1,7 +1,29 @@
 {% extends "dashboard/base.html" %}
 
 {% block content %}
-<div class='about-us-page'>
+<div class="about-us-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <img
+                    class="about-us-image"
+                    src="/media/about_us.JPEG"
+                    alt="Изображение на Централен Балкан ЕООД, гр. Габрово"
+                    />
+            </div>
+            <div class="col-md-6">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7602.692722765427!2d25.287683580073374!3d42.89117966476382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a91121e41cb8a7%3A0x3c58ae7f4600713c!2z0KbQtdC90YLRgNCw0LvQtdC9INCR0LDQu9C60LDQvSDQldCe0J7QlA!5e0!3m2!1sbg!2sbg!4v1598718899939!5m2!1sbg!2sbg"
+                    width="400"
+                    height="350"
+                    frameborder="0"
+                    style="border:0;"
+                    allowfullscreen
+                    aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
     <form method="POST" action="{% url "dashboard:ask_question" %}">
       {% csrf_token %}
       <div class="form-group">
