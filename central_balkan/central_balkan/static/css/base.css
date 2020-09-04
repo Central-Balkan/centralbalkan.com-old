@@ -205,10 +205,28 @@ iframe {
     padding: 5px;
 }
 
+.about-us-page .social_networks {
+    width: 80vw;
+    margin: auto;
+    padding: 5px;
+}
+
 .about-us-page .phones .person .phone {
     font-weight: 600;
 }
 
 .about-us-page .phones * {
     color: #0a3b50;
+}
+
+.page-footer .footer-text .person .phone {
+    font-weight: 600;
+}
+
+.page-footer .footer-text .social {
+    margin: 10px 0;
+}
+
+.page-footer .footer-text .social i {
+    padding: 5px;
 }
