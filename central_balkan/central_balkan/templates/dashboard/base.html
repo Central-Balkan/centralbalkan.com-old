@@ -25,8 +25,8 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navigation-list navbar-nav nav nav-fill nav-pills">
               <li class="nav-item">
-              <a class="nav-link" href="{% url 'dashboard:main-page' %}">Начало</a>
-              <a class="nav-link" href="{% url 'dashboard:category_detail' 'partners' %}">Партньори</a>
+                  <a class="nav-link" href="{% url 'dashboard:main-page' %}">Начало</a>
+                  <a class="about-us-nav nav-link" href="{% url 'dashboard:about_us' %}">Контакти</a>
               </li>
 
               <li class="nav-item">
@@ -47,10 +47,6 @@
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'dashboard:category_detail' 'garden-furniture' %}">Градински мебели</a>
                   <a class="nav-link" href="{% url 'dashboard:category_detail' 'metal-details' %}">Детайли от метал</a>
-              </li>
-
-              <li class="nav-item">
-                  <a class="about-us-nav nav-link" href="{% url 'dashboard:about_us' %}">Контакти</a>
               </li>
             </ul>
           </div>
@@ -96,7 +92,6 @@
                 <h5 class="text-uppercase">Страници</h5>
                 <ul class="list-unstyled">
                     <li><a href="{% url 'dashboard:main-page' %}">Начало</a></li>
-                    <li><a href="{% url 'dashboard:category_detail' 'partners' %}">Партньори</a></li>
                     <li><a href="{% url 'dashboard:about_us' %}">Контакти</a></li>
                 </ul>
               </div>
