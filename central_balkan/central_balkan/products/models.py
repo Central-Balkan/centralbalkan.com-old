@@ -1,3 +1,6 @@
+import os
+import uuid
+
 from django.db import models
 from django.conf import settings
 
@@ -31,6 +34,13 @@ class Category(models.Model):
         )
 
 
+def get_product_image_name(instance, filename):
+    _, extension = os.path.splitext(filename)
+    prefix = 'products'
+
+    return '{}/{}{}'.format(prefix, uuid.uuid4().hex, extension)
+
+
 class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
@@ -43,6 +53,7 @@ class Product(models.Model):
 
     image = models.ImageField(
         'Изображение',
+        upload_to=get_product_image_name,
         blank=True,
         null=True
     )
@@ -62,15 +73,7 @@ class Product(models.Model):
 
     @property
     def image_url(self):
-        domain = get_domain()
-        media_url = settings.MEDIA_URL
-
-        return '{}{}{}{}'.format(
-            domain,
-            media_url,
-            self.image.field.upload_to,
-            self.image
-        )
+        return self.image.url
 
     def __str__(self):
         return 'Продукт "{name}"'.format(
