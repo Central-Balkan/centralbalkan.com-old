@@ -24,6 +24,17 @@
             </div>
         </div>
     </div>
+    <div class='phones'>
+        <h3>Телефони за контакти</h3>
+        <div class='person'>
+            <span class='name'>Емил Дончев (управител):</span>
+            <span class='phone'>+358 / 888 366 270</span>
+        </div>
+        <div class='person'>
+            <span class='name'>Доротея Димитрова:</span>
+            <span class='phone'>+358 / 877 366 272</span>
+        </div>
+    </div>
     <form method="POST" action="{% url "dashboard:ask_question" %}">
       {% csrf_token %}
       <div class="form-group">
