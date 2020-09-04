@@ -6,12 +6,16 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='old_site/index.html')),
-    path('index.html/', TemplateView.as_view(template_name='old_site/index.html')),
-    path('products.html/', TemplateView.as_view(template_name='old_site/products.html')),
-    path('gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
-    path('about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
-    path('contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
+    path(
+        '',
+        include("central_balkan.dashboard.urls", namespace="dashboard"),
+    ),
+    path('old/', TemplateView.as_view(template_name='old_site/index.html')),
+    path('old/index.html/', TemplateView.as_view(template_name='old_site/index.html')),
+    path('old/products.html/', TemplateView.as_view(template_name='old_site/products.html')),
+    path('old/gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
+    path('old/about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
+    path('old/contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
     path("users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
         "about/",
@@ -28,10 +32,6 @@ urlpatterns = [
     path(
         "users/",
         include("central_balkan.users.urls", namespace="users"),
-    ),
-    path(
-        "new/",
-        include("central_balkan.dashboard.urls", namespace="dashboard"),
     ),
     # Your stuff: custom urls includes go here
 ] + static(
