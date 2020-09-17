@@ -4,64 +4,31 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from central_balkan.dashboard.views import MainPageView
 
 urlpatterns = [
     path(
         '',
         include("central_balkan.dashboard.urls", namespace="dashboard"),
     ),
-    path('old/', TemplateView.as_view(template_name='old_site/index.html')),
-    path('old/index.html/', TemplateView.as_view(template_name='old_site/index.html')),
-    path('old/products.html/', TemplateView.as_view(template_name='old_site/products.html')),
-    path('old/gallery.html/', TemplateView.as_view(template_name='old_site/gallery.html')),
-    path('old/about-central-balkan.html/', TemplateView.as_view(template_name='old_site/about-central-balkan.html')),
-    path('old/contacts-and-pruchase.html/', TemplateView.as_view(template_name='old_site/contacts-and-pruchase.html')),
-    path("users/", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
-    path(
-        'products/',
-        include("central_balkan.products.urls", namespace="products"),
-    ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    # User management
-    path(
-        "users/",
-        include("central_balkan.users.urls", namespace="users"),
-    ),
-    # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 ) + static(
     settings.STATIC_URL, document_root=settings.STATIC_ROOT
-)
+) + [
+    path(
+        '<str:something>',
+        view=MainPageView.as_view(),
+        name=''
+    ),
+]
 
-if settings.DEBUG:
-    # This allows the error pages to be debugged during development, just visit
-    # these url in browser to see how these error pages look like.
-    urlpatterns += [
-        path(
-            "400/",
-            default_views.bad_request,
-            kwargs={"exception": Exception("Bad Request!")},
-        ),
-        path(
-            "403/",
-            default_views.permission_denied,
-            kwargs={"exception": Exception("Permission Denied")},
-        ),
-        path(
-            "404/",
-            default_views.page_not_found,
-            kwargs={"exception": Exception("Page not Found")},
-        ),
-        path("500/", default_views.server_error),
-    ]
-    if "debug_toolbar" in settings.INSTALLED_APPS:
-        import debug_toolbar
+handler404 = 'central_balkan.dashboard.views.MainPageView'
 
-        urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+if "debug_toolbar" in settings.INSTALLED_APPS:
+    import debug_toolbar
+
+    urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
