@@ -230,3 +230,9 @@ iframe {
 .page-footer .footer-text .social i {
     padding: 5px;
 }
+
+.app_page {
+    padding: 20px;
+    height: 80vh;
+    background: 'blue'
+}

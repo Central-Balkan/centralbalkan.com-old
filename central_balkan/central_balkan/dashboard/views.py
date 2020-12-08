@@ -1,6 +1,8 @@
-from django.views.generic import TemplateView, FormView
+import os
+from django.views.generic import TemplateView, FormView, View
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.http.response import HttpResponse
 
 from central_balkan.dashboard.models import SlideShowImage, Question
 from central_balkan.dashboard.forms import AskQuestionForm
@@ -88,3 +90,7 @@ class AskQuestionView(FormView):
 
 class AboutUsView(TemplateView):
     template_name = 'dashboard/about_us.html'
+
+
+class AppView(TemplateView):
+    template_name = 'dashboard/app.html'

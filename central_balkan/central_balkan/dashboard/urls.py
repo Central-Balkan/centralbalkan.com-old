@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MainPageView, CategoryDetailView, AskQuestionView, AboutUsView
+from .views import MainPageView, CategoryDetailView, AskQuestionView, AboutUsView, AppView
 
 app_name = "dashboard"
 
@@ -16,4 +16,5 @@ urlpatterns = [
         view=AskQuestionView.as_view(),
         name='ask_question'
     ),
+    path('apps/', view=AppView.as_view(), name="apps"),
 ]
